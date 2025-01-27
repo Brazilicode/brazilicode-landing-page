@@ -3,38 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const developerRoles = [
-  "Full Stack",
-  "Front End",
-  "Back End",
-  "Mobile Developer",
-  "Data Science",
-  "DevOps",
-  "QA Tester",
-  "Other"
+  "Full Stack", "Front End", "Back End", "Mobile Developer",
+  "Data Science", "DevOps", "QA Tester", "Other"
 ];
 
 const companyRoles = [
-  "CEO",
-  "CTO",
-  "COO",
-  "CPO",
-  "Developer",
-  "Analyst",
-  "Other"
+  "CEO", "CTO", "COO", "CPO", "Developer", "Analyst", "Other"
 ];
 
 const companyCategories = [
-  "Fintech",
-  "Technology",
-  "Healthcare",
-  "Marketing",
-  "E-commerce",
-  "Other"
+  "Fintech", "Technology", "Healthcare", "Marketing", "E-commerce", "Other"
 ];
 
 const companySizes = [
@@ -50,25 +32,13 @@ const seniorities = [
 ];
 
 const stacks = [
-  "JavaScript",
-  "Python",
-  "Java",
-  "C#",
-  "Ruby",
-  "PHP",
-  "Go",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "Angular",
-  "Vue.js",
-  "Docker",
-  "Kubernetes"
+  "JavaScript", "Python", "Java", "C#", "Ruby", "PHP", "Go",
+  "TypeScript", "React", "Node.js", "Angular", "Vue.js", "Docker", "Kubernetes"
 ];
 
 export function WaitlistDialog() {
   const [open, setOpen] = useState(false);
-  const [userType, setUserType] = useState<"developer" | "company">("developer");
+  const [userType, setUserType] = useState<"developer" | "company" | null>(null);
   const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
   const { toast } = useToast();
   
@@ -105,156 +75,186 @@ export function WaitlistDialog() {
           Join the Waitlist
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">Start Building Your Dream {userType === "developer" ? "Career" : "Team"}</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-center">
+            {!userType ? "Choose Your Path" : `Start Building Your Dream ${userType === "developer" ? "Career" : "Team"}`}
+          </DialogTitle>
         </DialogHeader>
         
-        <div className="flex justify-center gap-4 mb-6">
-          <Button
-            variant={userType === "developer" ? "default" : "outline"}
-            onClick={() => setUserType("developer")}
-            className="w-full"
-          >
-            I'm a Developer
-          </Button>
-          <Button
-            variant={userType === "company" ? "default" : "outline"}
-            onClick={() => setUserType("company")}
-            className="w-full"
-          >
-            I'm a Company
-          </Button>
-        </div>
+        {!userType ? (
+          <div className="flex flex-col gap-4 py-6">
+            <Button
+              size="lg"
+              onClick={() => setUserType("developer")}
+              className="w-full py-8 text-lg transition-all hover:scale-105"
+            >
+              I'm a Developer
+            </Button>
+            <Button
+              size="lg"
+              onClick={() => setUserType("company")}
+              className="w-full py-8 text-lg transition-all hover:scale-105"
+            >
+              I'm a Company
+            </Button>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-3 mt-4">
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              onClick={() => setUserType(null)}
+              className="mb-4"
+            >
+              ← Back to selection
+            </Button>
 
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-          {userType === "developer" ? (
-            <>
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
-                <Input id="name" required className="bg-background" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="birthdate">Date of Birth</Label>
-                <Input id="birthdate" type="date" required className="bg-background" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required className="bg-background" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="seniority">Seniority</Label>
-                <Select required>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder="Select your seniority" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {seniorities.map((seniority) => (
-                      <SelectItem key={seniority} value={seniority.toLowerCase()}>
-                        {seniority}
-                      </SelectItem>
+            {userType === "developer" ? (
+              <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input id="name" required className="bg-background" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" required className="bg-background" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="birthdate">Date of Birth</Label>
+                    <Input id="birthdate" type="date" required className="bg-background" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="seniority">Seniority</Label>
+                    <Select required>
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {seniorities.map((seniority) => (
+                          <SelectItem key={seniority} value={seniority.toLowerCase()}>
+                            {seniority}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div className="space-y-1">
+                  <Label htmlFor="role">Role</Label>
+                  <Select required>
+                    <SelectTrigger className="bg-background">
+                      <SelectValue placeholder="Select your role" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {developerRoles.map((role) => (
+                        <SelectItem key={role} value={role.toLowerCase()}>
+                          {role}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-1">
+                  <Label>Tech Stack (max 5)</Label>
+                  <div className="grid grid-cols-3 gap-1 mt-1">
+                    {stacks.map((stack) => (
+                      <Button
+                        key={stack}
+                        type="button"
+                        variant={selectedStacks.includes(stack) ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => handleStackToggle(stack)}
+                        className="text-xs h-8"
+                      >
+                        {stack}
+                      </Button>
                     ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="role">Role</Label>
-                <Select required>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder="Select your role" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {developerRoles.map((role) => (
-                      <SelectItem key={role} value={role.toLowerCase()}>
-                        {role}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label>Tech Stack (max 5)</Label>
-                <div className="grid grid-cols-2 gap-2 mt-2">
-                  {stacks.map((stack) => (
-                    <Button
-                      key={stack}
-                      type="button"
-                      variant={selectedStacks.includes(stack) ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => handleStackToggle(stack)}
-                      className="text-sm"
-                    >
-                      {stack}
-                    </Button>
-                  ))}
+                  </div>
                 </div>
               </div>
-            </>
-          ) : (
-            <>
-              <div className="space-y-2">
-                <Label htmlFor="companyName">Company Name</Label>
-                <Input id="companyName" required className="bg-background" />
+            ) : (
+              <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="companyName">Company Name</Label>
+                    <Input id="companyName" required className="bg-background" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="responsibleName">Responsible Name</Label>
+                    <Input id="responsibleName" required className="bg-background" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="role">Role</Label>
+                    <Select required>
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {companyRoles.map((role) => (
+                          <SelectItem key={role} value={role.toLowerCase()}>
+                            {role}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="companySize">Company Size</Label>
+                    <Select required>
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {companySizes.map((size) => (
+                          <SelectItem key={size} value={size.toLowerCase()}>
+                            {size}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="corporateEmail">Corporate Email</Label>
+                    <Input id="corporateEmail" type="email" required className="bg-background" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="category">Category</Label>
+                    <Select required>
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {companyCategories.map((category) => (
+                          <SelectItem key={category} value={category.toLowerCase()}>
+                            {category}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="responsibleName">Responsible Name</Label>
-                <Input id="responsibleName" required className="bg-background" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="role">Role</Label>
-                <Select required>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder="Select your role" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {companyRoles.map((role) => (
-                      <SelectItem key={role} value={role.toLowerCase()}>
-                        {role}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="companySize">Company Size</Label>
-                <Select required>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder="Select company size" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {companySizes.map((size) => (
-                      <SelectItem key={size} value={size.toLowerCase()}>
-                        {size}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="corporateEmail">Corporate Email</Label>
-                <Input id="corporateEmail" type="email" required className="bg-background" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="category">Company Category</Label>
-                <Select required>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder="Select company category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {companyCategories.map((category) => (
-                      <SelectItem key={category} value={category.toLowerCase()}>
-                        {category}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </>
-          )}
-          <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-            Submit and Join
-          </Button>
-        </form>
+            )}
+
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 mt-6">
+              Submit and Join
+            </Button>
+          </form>
+        )}
       </DialogContent>
     </Dialog>
   );
