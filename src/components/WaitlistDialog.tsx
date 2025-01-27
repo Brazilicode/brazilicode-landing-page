@@ -31,31 +31,31 @@ export function WaitlistDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 text-lg">
+        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 text-lg animate-pulse">
           Join the Waitlist
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Join Our Waitlist</DialogTitle>
+          <DialogTitle className="text-2xl font-bold">Start Building Your Dream Team</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="space-y-2">
             <Label htmlFor="name">Full Name</Label>
-            <Input id="name" required />
+            <Input id="name" required className="bg-background" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="birthdate">Date of Birth</Label>
-            <Input id="birthdate" type="date" required />
+            <Input id="birthdate" type="date" required className="bg-background" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" required />
+            <Input id="email" type="email" required className="bg-background" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="role">Role</Label>
             <Select required>
-              <SelectTrigger>
+              <SelectTrigger className="bg-background">
                 <SelectValue placeholder="Select your role" />
               </SelectTrigger>
               <SelectContent>
@@ -67,7 +67,9 @@ export function WaitlistDialog() {
               </SelectContent>
             </Select>
           </div>
-          <Button type="submit" className="w-full">Submit</Button>
+          <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+            Submit and Join
+          </Button>
         </form>
       </DialogContent>
     </Dialog>
