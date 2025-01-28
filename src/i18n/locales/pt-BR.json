@@ -1,65 +1,65 @@
 {
   "hero": {
-    "title": "Quebre Barreiras, Construa Pontes",
-    "subtitle": "Chat em tempo real, transcrição e tradução. Desbloqueie o melhor talento tech brasileiro com comunicação sem fronteiras."
+    "title": "Quebre Barreiras, Conecte o Mundo",
+    "subtitle": "Chat, transcrição e tradução em tempo real. Liberte o potencial dos melhores talentos tech do Brasil com uma comunicação sem fronteiras."
   },
   "solution": {
     "title": "Comunicação Sem Limites",
-    "description": "Brazilicode oferece chat em tempo real, transcrição e tradução com integração de vídeo, permitindo colaboração perfeita entre empresas globais e desenvolvedores brasileiros de alto nível."
+    "description": "O Brazilicode conecta empresas globais a desenvolvedores brasileiros, eliminando barreiras linguísticas com chat em tempo real, transcrição automática e tradução integrada a vídeo."
   },
   "benefits": {
-    "title": "A Plataforma Projetada para Colaboração Global",
+    "title": "Uma Plataforma Feita para Colaboração Global",
     "developers": {
-      "income": "Ganhe em dólares e multiplique sua renda",
-      "opportunities": "Trabalhe com empresas globais e expanda suas oportunidades de carreira",
-      "communication": "Comunicação fluida com tradução e transcrição em tempo real",
-      "market": "Acesse uma economia de 200 bilhões de dólares trabalhando remotamente"
+      "income": "Receba em dólares e veja sua renda crescer exponencialmente",
+      "opportunities": "Conquiste novas oportunidades trabalhando com empresas globais",
+      "communication": "Garanta conversas claras com tradução e transcrição em tempo real",
+      "market": "Acesse uma economia global de US$ 200 bilhões sem sair do Brasil"
     },
     "companies": {
-      "talent": "Acesse os melhores talentos em tecnologia do Brasil sem barreiras linguísticas",
-      "scale": "Escale sua equipe com desenvolvedores altamente qualificados",
-      "collaboration": "Chat, transcrição e tradução em tempo real para uma colaboração perfeita",
-      "costs": "Economize tempo e reduza custos contratando especialistas remotos"
+      "talent": "Contrate os melhores talentos tech do Brasil, sem barreiras linguísticas",
+      "scale": "Escale sua equipe rapidamente com desenvolvedores qualificados",
+      "collaboration": "Facilite colaborações com chat, transcrição e tradução em tempo real",
+      "costs": "Reduza custos e economize tempo ao contratar especialistas remotos"
     }
   },
   "features": {
-    "title": "Plataforma Completa de Colaboração"
+    "title": "Tudo o que Você Precisa para uma Colaboração Eficiente"
   },
   "faq": {
     "title": "Dúvidas? Nós Temos as Respostas",
     "questions": {
       "translation": {
         "question": "Como funciona a tradução em tempo real?",
-        "answer": "Nossas ferramentas com IA fornecem traduções instantâneas durante chats e videochamadas, garantindo comunicação clara."
+        "answer": "Nossa tecnologia baseada em IA traduz mensagens e transcrições instantaneamente, permitindo uma comunicação eficiente e natural."
       },
       "transcriptions": {
-        "question": "Posso baixar as transcrições do chat?",
-        "answer": "Sim, todas as transcrições de chat e vídeo estão disponíveis para download em vários idiomas."
+        "question": "É possível baixar as transcrições?",
+        "answer": "Sim! Todas as transcrições de chats e videochamadas podem ser baixadas em vários idiomas."
       },
       "industries": {
-        "question": "Para quais setores vocês atendem?",
-        "answer": "Nos especializamos em conectar empresas de tecnologia com os melhores desenvolvedores brasileiros, mas estamos abertos a outros setores."
+        "question": "Quais tipos de empresas podem usar a plataforma?",
+        "answer": "Atendemos principalmente empresas de tecnologia, mas nossa solução é flexível para diversos setores, como marketing, saúde e fintechs."
       },
       "security": {
-        "question": "Quão segura é a plataforma?",
-        "answer": "Usamos criptografia ponta a ponta para garantir que todas as comunicações e dados estejam seguros."
+        "question": "A plataforma é segura?",
+        "answer": "Sim, utilizamos criptografia de ponta a ponta para proteger todas as comunicações e garantir a privacidade dos dados."
       },
       "onboarding": {
-        "question": "Como é o processo de integração?",
-        "answer": "É rápido e simples! Você pode começar a colaborar com talentos em menos de duas semanas."
+        "question": "Como funciona o processo de integração?",
+        "answer": "É simples e rápido. Você pode começar a colaborar com talentos em menos de duas semanas."
       }
     }
   },
   "waitlist": {
-    "button": "Entre na lista de espera e inicie sua carreira global hoje!",
-    "title": "Escolha Seu Caminho",
+    "button": "Entre na lista de espera",
+    "title": "Escolha Seu Perfil",
     "developer": "Sou Desenvolvedor",
     "company": "Sou Empresa",
-    "back": "← Voltar à seleção",
-    "submit": "Enviar e Participar",
+    "back": "← Voltar para a Seleção",
+    "submit": "Enviar e Entrar",
     "success": {
-      "developer": "Obrigado por se inscrever! Em breve entraremos em contato para conectar você com empresas globais.",
-      "company": "Obrigado por se inscrever! Nossa equipe entrará em contato para ajudá-lo a encontrar os melhores talentos."
+      "developer": "Obrigado por se inscrever! Nossa equipe entrará em contato em breve para conectá-lo a empresas globais.",
+      "company": "Obrigado por se inscrever! Nossa equipe entrará em contato em breve para ajudá-lo a encontrar os melhores desenvolvedores."
     }
   },
   "nav": {
