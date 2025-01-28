@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Quebre Barreiras, Construa Pontes",
+    "subtitle": "Chat em tempo real, transcrição e tradução. Desbloqueie o melhor talento tech brasileiro com comunicação sem fronteiras."
+  },
+  "solution": {
+    "title": "Comunicação Sem Limites",
+    "description": "Brazilicode oferece chat em tempo real, transcrição e tradução com integração de vídeo, permitindo colaboração perfeita entre empresas globais e desenvolvedores brasileiros de alto nível."
+  },
+  "benefits": {
+    "title": "A Plataforma Projetada para Colaboração Global"
+  },
+  "features": {
+    "title": "Plataforma Completa de Colaboração"
+  },
+  "faq": {
+    "title": "Dúvidas? Nós Temos as Respostas",
+    "questions": {
+      "translation": {
+        "question": "Como funciona a tradução em tempo real?",
+        "answer": "Nossas ferramentas com IA fornecem traduções instantâneas durante chats e videochamadas, garantindo comunicação clara."
+      },
+      "transcriptions": {
+        "question": "Posso baixar as transcrições do chat?",
+        "answer": "Sim, todas as transcrições de chat e vídeo estão disponíveis para download em vários idiomas."
+      },
+      "industries": {
+        "question": "Para quais setores vocês atendem?",
+        "answer": "Nos especializamos em conectar empresas de tecnologia com os melhores desenvolvedores brasileiros, mas estamos abertos a outros setores."
+      },
+      "security": {
+        "question": "Quão segura é a plataforma?",
+        "answer": "Usamos criptografia ponta a ponta para garantir que todas as comunicações e dados estejam seguros."
+      },
+      "onboarding": {
+        "question": "Como é o processo de integração?",
+        "answer": "É rápido e simples! Você pode começar a colaborar com talentos em menos de duas semanas."
+      }
+    }
+  },
+  "waitlist": {
+    "button": "Entre na Lista de Espera",
+    "title": "Escolha Seu Caminho",
+    "developer": "Sou Desenvolvedor",
+    "company": "Sou Empresa",
+    "back": "← Voltar à seleção",
+    "submit": "Enviar e Participar"
+  },
+  "nav": {
+    "features": "Funcionalidades",
+    "benefits": "Benefícios",
+    "faq": "FAQ"
+  }
+}

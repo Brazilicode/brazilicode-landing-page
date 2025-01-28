@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Break Barriers, Build Bridges",
+    "subtitle": "Real-time chat, transcription, and translation. Unlock Brazil's top tech talent with seamless communication."
+  },
+  "solution": {
+    "title": "Communication Without Limits",
+    "description": "Brazilicode offers real-time chat, transcription, and translation with video integration, enabling seamless collaboration between global companies and top-tier Brazilian developers."
+  },
+  "benefits": {
+    "title": "The Platform Designed for Global Collaboration"
+  },
+  "features": {
+    "title": "All-in-One Collaboration Platform"
+  },
+  "faq": {
+    "title": "Got Questions? We've Got Answers",
+    "questions": {
+      "translation": {
+        "question": "How does real-time translation work?",
+        "answer": "Our AI-powered tools provide instant translations during chats and video calls, ensuring clear communication."
+      },
+      "transcriptions": {
+        "question": "Can I download chat transcriptions?",
+        "answer": "Yes, all chats and video transcriptions are available for download in multiple languages."
+      },
+      "industries": {
+        "question": "What industries do you cater to?",
+        "answer": "We specialize in connecting tech companies with top Brazilian developers but are open to other sectors."
+      },
+      "security": {
+        "question": "How secure is the platform?",
+        "answer": "We use end-to-end encryption to ensure all communications and data are secure."
+      },
+      "onboarding": {
+        "question": "What's the onboarding process like?",
+        "answer": "It's quick and seamless! You can start collaborating with talent in under two weeks."
+      }
+    }
+  },
+  "waitlist": {
+    "button": "Join the Waitlist",
+    "title": "Choose Your Path",
+    "developer": "I'm a Developer",
+    "company": "I'm a Company",
+    "back": "← Back to selection",
+    "submit": "Submit and Join"
+  },
+  "nav": {
+    "features": "Features",
+    "benefits": "Benefits",
+    "faq": "FAQ"
+  }
+}

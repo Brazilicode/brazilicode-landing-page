@@ -41,6 +41,7 @@ export function WaitlistDialog() {
   const [userType, setUserType] = useState<"developer" | "company" | null>(null);
   const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
   const { toast } = useToast();
+  const { t } = useTranslation();
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -72,13 +73,13 @@ export function WaitlistDialog() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 text-lg animate-pulse">
-          Join the Waitlist
+          {t('waitlist.button')}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
-            {!userType ? "Choose Your Path" : `Start Building Your Dream ${userType === "developer" ? "Career" : "Team"}`}
+            {!userType ? t('waitlist.title') : `${t('waitlist.developer')}`}
           </DialogTitle>
         </DialogHeader>
         
@@ -89,14 +90,14 @@ export function WaitlistDialog() {
               onClick={() => setUserType("developer")}
               className="w-full py-8 text-lg transition-all hover:scale-105"
             >
-              I'm a Developer
+              {t('waitlist.developer')}
             </Button>
             <Button
               size="lg"
               onClick={() => setUserType("company")}
               className="w-full py-8 text-lg transition-all hover:scale-105"
             >
-              I'm a Company
+              {t('waitlist.company')}
             </Button>
           </div>
         ) : (
@@ -108,7 +109,7 @@ export function WaitlistDialog() {
               onClick={() => setUserType(null)}
               className="mb-4"
             >
-              ← Back to selection
+              {t('waitlist.back')}
             </Button>
 
             {userType === "developer" ? (
@@ -251,7 +252,7 @@ export function WaitlistDialog() {
             )}
 
             <Button type="submit" className="w-full bg-primary hover:bg-primary/90 mt-6">
-              Submit and Join
+              {t('waitlist.submit')}
             </Button>
           </form>
         )}
