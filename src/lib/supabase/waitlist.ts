@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase/client';
+import { supabase } from './client';
 import type { WaitlistUser, Developer, Company } from '@/types/database.types';
 
 export async function addDeveloperToWaitlist(
