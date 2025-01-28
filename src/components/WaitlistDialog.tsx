@@ -83,13 +83,26 @@ export function WaitlistDialog() {
         description: t(`waitlist.success.${userType}`),
       });
       setOpen(false);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting to waitlist:", error);
-      toast({
-        title: t("waitlist.error.title"),
-        description: t("waitlist.error.description"),
-        variant: "destructive",
-      });
+      
+      // Check for duplicate email error
+      if (error?.message?.includes("waitlist_companies_corporate_email_key") || 
+          error?.message?.includes("23505")) {
+        toast({
+          title: t("waitlist.error.duplicate.title"),
+          description: userType === "company" 
+            ? "This corporate email is already registered in our waitlist."
+            : "This email is already registered in our waitlist.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: t("waitlist.error.title"),
+          description: t("waitlist.error.description"),
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
