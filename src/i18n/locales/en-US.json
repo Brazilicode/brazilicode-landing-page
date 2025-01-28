@@ -60,8 +60,19 @@
     "success": {
       "developer": "Thanks for signing up! We'll be in touch soon to connect you with global companies.",
       "company": "Thanks for signing up! Our team will contact you to help find the best talent."
+    },
+    "error": {
+      "duplicate": {
+        "title": "You are already on the waiting list!",
+        "description": {
+          "developer": "Please wait for our contact to start collaborating with global companies.",
+          "company": "Please wait for our contact to find the best developers."
+        }
+      },
+      "title": "An error occurred",
+      "description": "Please try again later."
     }
-  },
+    },
   "nav": {
     "features": "Features",
     "benefits": "Benefits",

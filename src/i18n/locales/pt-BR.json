@@ -60,6 +60,17 @@
     "success": {
       "developer": "Obrigado por se inscrever! Nossa equipe entrará em contato em breve para conectá-lo a empresas globais.",
       "company": "Obrigado por se inscrever! Nossa equipe entrará em contato em breve para ajudá-lo a encontrar os melhores desenvolvedores."
+    },
+    "error": {
+      "duplicate": {
+        "title": "Você já está na lista de espera!",
+        "description": {
+          "developer": "Aguarde nosso contato para começar a colaborar com empresas globais.",
+          "company": "Nossa equipe entrará em contato para ajudá-lo a encontrar os melhores talentos."
+        }
+      },
+      "title": "Erro ao enviar o formulário",
+      "description": "Por favor, tente novamente mais tarde."
     }
   },
   "nav": {

@@ -91,10 +91,8 @@ export function WaitlistDialog() {
           error?.message?.includes("23505")) {
         toast({
           title: t("waitlist.error.duplicate.title"),
-          description: userType === "company" 
-            ? "This corporate email is already registered in our waitlist."
-            : "This email is already registered in our waitlist.",
-          variant: "destructive",
+          description: t(`waitlist.error.duplicate.description.${userType}`),
+          variant: "destructive"
         });
       } else {
         toast({
