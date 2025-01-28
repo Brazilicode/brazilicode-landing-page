@@ -8,7 +8,19 @@
     "description": "Brazilicode offers real-time chat, transcription, and translation with video integration, enabling seamless collaboration between global companies and top-tier Brazilian developers."
   },
   "benefits": {
-    "title": "The Platform Designed for Global Collaboration"
+    "title": "The Platform Designed for Global Collaboration",
+    "developers": {
+      "income": "Earn in USD and increase your income",
+      "opportunities": "Work with global companies and expand your career opportunities",
+      "communication": "Seamless communication with live translation and transcription",
+      "market": "Access a $200 billion economy by working remotely"
+    },
+    "companies": {
+      "talent": "Tap into Brazil's top tech talent with no language barriers",
+      "scale": "Scale your team with highly skilled developers",
+      "collaboration": "Real-time chat, transcription, and translation for smooth collaboration",
+      "costs": "Save time and reduce costs by hiring remote experts"
+    }
   },
   "features": {
     "title": "All-in-One Collaboration Platform"
@@ -39,12 +51,16 @@
     }
   },
   "waitlist": {
-    "button": "Join the Waitlist",
+    "button": "Join the waitlist and start your global career today!",
     "title": "Choose Your Path",
     "developer": "I'm a Developer",
     "company": "I'm a Company",
     "back": "← Back to selection",
-    "submit": "Submit and Join"
+    "submit": "Submit and Join",
+    "success": {
+      "developer": "Thanks for signing up! We'll be in touch soon to connect you with global companies.",
+      "company": "Thanks for signing up! Our team will contact you to help find the best talent."
+    }
   },
   "nav": {
     "features": "Features",

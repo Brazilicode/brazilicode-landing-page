@@ -8,7 +8,19 @@
     "description": "Brazilicode oferece chat em tempo real, transcrição e tradução com integração de vídeo, permitindo colaboração perfeita entre empresas globais e desenvolvedores brasileiros de alto nível."
   },
   "benefits": {
-    "title": "A Plataforma Projetada para Colaboração Global"
+    "title": "A Plataforma Projetada para Colaboração Global",
+    "developers": {
+      "income": "Ganhe em dólares e multiplique sua renda",
+      "opportunities": "Trabalhe com empresas globais e expanda suas oportunidades de carreira",
+      "communication": "Comunicação fluida com tradução e transcrição em tempo real",
+      "market": "Acesse uma economia de 200 bilhões de dólares trabalhando remotamente"
+    },
+    "companies": {
+      "talent": "Acesse os melhores talentos em tecnologia do Brasil sem barreiras linguísticas",
+      "scale": "Escale sua equipe com desenvolvedores altamente qualificados",
+      "collaboration": "Chat, transcrição e tradução em tempo real para uma colaboração perfeita",
+      "costs": "Economize tempo e reduza custos contratando especialistas remotos"
+    }
   },
   "features": {
     "title": "Plataforma Completa de Colaboração"
@@ -39,12 +51,16 @@
     }
   },
   "waitlist": {
-    "button": "Entre na Lista de Espera",
+    "button": "Entre na lista de espera e inicie sua carreira global hoje!",
     "title": "Escolha Seu Caminho",
     "developer": "Sou Desenvolvedor",
     "company": "Sou Empresa",
     "back": "← Voltar à seleção",
-    "submit": "Enviar e Participar"
+    "submit": "Enviar e Participar",
+    "success": {
+      "developer": "Obrigado por se inscrever! Em breve entraremos em contato para conectar você com empresas globais.",
+      "company": "Obrigado por se inscrever! Nossa equipe entrará em contato para ajudá-lo a encontrar os melhores talentos."
+    }
   },
   "nav": {
     "features": "Funcionalidades",
