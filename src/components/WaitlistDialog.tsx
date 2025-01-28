@@ -79,7 +79,7 @@ export function WaitlistDialog() {
       }
 
       toast({
-        title: t("waitlist.success.title"),
+        title: t("Enviado com sucesso"),
         description: t(`waitlist.success.${userType}`),
       });
       setOpen(false);
@@ -121,9 +121,14 @@ export function WaitlistDialog() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center">
-            {!userType ? t('waitlist.title') : `${t('waitlist.developer')}`}
-          </DialogTitle>
+        <DialogTitle className="text-2xl font-bold text-center">
+        {!userType
+          ? t('waitlist.title')
+          : userType === "developer"
+          ? t('waitlist.developer')
+          : t('waitlist.company')}
+        </DialogTitle>
+
         </DialogHeader>
         
         {!userType ? (
