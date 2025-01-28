@@ -6,6 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import { addCompanyToWaitlist, addDeveloperToWaitlist } from "@/services/waitlist";
+import type { CompanyWaitlist, DeveloperWaitlist } from "@/types/waitlist";
 
 const developerRoles = [
   "Full Stack", "Front End", "Back End", "Mobile Developer",
@@ -41,16 +43,56 @@ export function WaitlistDialog() {
   const [open, setOpen] = useState(false);
   const [userType, setUserType] = useState<"developer" | "company" | null>(null);
   const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const { t } = useTranslation();
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Success!",
-      description: "You've been added to our waitlist. We'll be in touch soon!",
-    });
-    setOpen(false);
+    setIsSubmitting(true);
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      
+      if (userType === "developer") {
+        const developerData: DeveloperWaitlist = {
+          full_name: formData.get("name") as string,
+          email: formData.get("email") as string,
+          birth_date: formData.get("birthdate") as string,
+          seniority: formData.get("seniority") as DeveloperWaitlist["seniority"],
+          role: formData.get("role") as DeveloperWaitlist["role"],
+          tech_stack: selectedStacks,
+        };
+        
+        await addDeveloperToWaitlist(developerData);
+      } else {
+        const companyData: CompanyWaitlist = {
+          company_name: formData.get("companyName") as string,
+          responsible_name: formData.get("responsibleName") as string,
+          role: formData.get("role") as CompanyWaitlist["role"],
+          company_size: formData.get("companySize") as CompanyWaitlist["company_size"],
+          corporate_email: formData.get("corporateEmail") as string,
+          category: formData.get("category") as CompanyWaitlist["category"],
+        };
+        
+        await addCompanyToWaitlist(companyData);
+      }
+
+      toast({
+        title: t("waitlist.success.title"),
+        description: t(`waitlist.success.${userType}`),
+      });
+      setOpen(false);
+    } catch (error) {
+      console.error("Error submitting to waitlist:", error);
+      toast({
+        title: t("waitlist.error.title"),
+        description: t("waitlist.error.description"),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleStackToggle = (stack: string) => {
@@ -109,6 +151,7 @@ export function WaitlistDialog() {
               size="sm"
               onClick={() => setUserType(null)}
               className="mb-4"
+              disabled={isSubmitting}
             >
               {t('waitlist.back')}
             </Button>
@@ -118,22 +161,22 @@ export function WaitlistDialog() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" required className="bg-background" />
+                    <Input id="name" name="name" required className="bg-background" disabled={isSubmitting} />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" required className="bg-background" />
+                    <Input id="email" name="email" type="email" required className="bg-background" disabled={isSubmitting} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label htmlFor="birthdate">Date of Birth</Label>
-                    <Input id="birthdate" type="date" required className="bg-background" />
+                    <Input id="birthdate" name="birthdate" type="date" required className="bg-background" disabled={isSubmitting} />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="seniority">Seniority</Label>
-                    <Select required>
+                    <Select name="seniority" required>
                       <SelectTrigger className="bg-background">
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
@@ -150,7 +193,7 @@ export function WaitlistDialog() {
 
                 <div className="space-y-1">
                   <Label htmlFor="role">Role</Label>
-                  <Select required>
+                  <Select name="role" required>
                     <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Select your role" />
                     </SelectTrigger>
@@ -175,6 +218,7 @@ export function WaitlistDialog() {
                         size="sm"
                         onClick={() => handleStackToggle(stack)}
                         className="text-xs h-8"
+                        disabled={isSubmitting}
                       >
                         {stack}
                       </Button>
@@ -187,18 +231,18 @@ export function WaitlistDialog() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label htmlFor="companyName">Company Name</Label>
-                    <Input id="companyName" required className="bg-background" />
+                    <Input id="companyName" name="companyName" required className="bg-background" disabled={isSubmitting} />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="responsibleName">Responsible Name</Label>
-                    <Input id="responsibleName" required className="bg-background" />
+                    <Input id="responsibleName" name="responsibleName" required className="bg-background" disabled={isSubmitting} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label htmlFor="role">Role</Label>
-                    <Select required>
+                    <Select name="role" required>
                       <SelectTrigger className="bg-background">
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
@@ -213,7 +257,7 @@ export function WaitlistDialog() {
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="companySize">Company Size</Label>
-                    <Select required>
+                    <Select name="companySize" required>
                       <SelectTrigger className="bg-background">
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
@@ -231,11 +275,11 @@ export function WaitlistDialog() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label htmlFor="corporateEmail">Corporate Email</Label>
-                    <Input id="corporateEmail" type="email" required className="bg-background" />
+                    <Input id="corporateEmail" name="corporateEmail" type="email" required className="bg-background" disabled={isSubmitting} />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="category">Category</Label>
-                    <Select required>
+                    <Select name="category" required>
                       <SelectTrigger className="bg-background">
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
@@ -252,8 +296,12 @@ export function WaitlistDialog() {
               </div>
             )}
 
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 mt-6">
-              {t('waitlist.submit')}
+            <Button 
+              type="submit" 
+              className="w-full bg-primary hover:bg-primary/90 mt-6"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : t('waitlist.submit')}
             </Button>
           </form>
         )}
