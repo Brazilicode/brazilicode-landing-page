@@ -1,51 +1,70 @@
 {
   "hero": {
-    "title": "Break <span class='text-primary'>Barriers</span>, Build <span class='text-primary'>Bridges</span>",
-    "subtitle": "Brazilicode offers real-time chat, transcription, and translation with video integration, enabling seamless collaboration between global companies and top-tier Brazilian developers."
+    "title": "Break Barriers, Build Bridges",
+    "subtitle": "Real-time chat, transcription, and translation. Unlock Brazil's top tech talent with seamless communication."
+  },
+  "solution": {
+    "title": "Communication Without Limits",
+    "description": "Brazilicode offers real-time chat, transcription, and translation with video integration, enabling seamless collaboration between global companies and top-tier Brazilian developers."
   },
   "benefits": {
-    "title": "Benefits",
-    "description": "Discover the advantages of using Brazilicode.",
-    "questions": {
-      "q1": {
-        "question": "What is Brazilicode?",
-        "answer": "Brazilicode is a platform that connects global companies with Brazilian developers."
-      },
-      "q2": {
-        "question": "How does it work?",
-        "answer": "You can post your project, and we will match you with qualified developers."
-      }
+    "title": "The Platform Designed for Global Collaboration",
+    "developers": {
+      "income": "Earn in USD and increase your income",
+      "opportunities": "Work with global companies and expand your career opportunities",
+      "communication": "Seamless communication with live translation and transcription",
+      "market": "Access a $200 billion economy by working remotely"
+    },
+    "companies": {
+      "talent": "Tap into Brazil's top tech talent with no language barriers",
+      "scale": "Scale your team with highly skilled developers",
+      "collaboration": "Real-time chat, transcription, and translation for smooth collaboration",
+      "costs": "Save time and reduce costs by hiring remote experts"
     }
   },
   "features": {
-    "title": "Features",
-    "description": "Explore the features that make Brazilicode unique."
-  },
-  "solution": {
-    "title": "Our Solution",
-    "description": "We provide a comprehensive solution for your development needs."
+    "title": "All-in-One Collaboration Platform"
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "title": "Got Questions? We've Got Answers",
     "questions": {
-      "q1": {
-        "question": "How can I sign up?",
-        "answer": "You can sign up by visiting our website and filling out the registration form."
+      "translation": {
+        "question": "How does real-time translation work?",
+        "answer": "Our AI-powered tools provide instant translations during chats and video calls, ensuring clear communication."
       },
-      "q2": {
-        "question": "What payment methods do you accept?",
-        "answer": "We accept various payment methods including credit cards and PayPal."
+      "transcriptions": {
+        "question": "Can I download chat transcriptions?",
+        "answer": "Yes, all chats and video transcriptions are available for download in multiple languages."
+      },
+      "industries": {
+        "question": "What industries do you cater to?",
+        "answer": "We specialize in connecting tech companies with top Brazilian developers but are open to other sectors."
+      },
+      "security": {
+        "question": "How secure is the platform?",
+        "answer": "We use end-to-end encryption to ensure all communications and data are secure."
+      },
+      "onboarding": {
+        "question": "What's the onboarding process like?",
+        "answer": "It's quick and seamless! You can start collaborating with talent in under two weeks."
       }
+    }
+  },
+  "waitlist": {
+    "button": "Join the waitlist and start your global career today!",
+    "title": "Choose Your Path",
+    "developer": "I'm a Developer",
+    "company": "I'm a Company",
+    "back": "← Back to selection",
+    "submit": "Submit and Join",
+    "success": {
+      "developer": "Thanks for signing up! We'll be in touch soon to connect you with global companies.",
+      "company": "Thanks for signing up! Our team will contact you to help find the best talent."
     }
   },
   "nav": {
     "features": "Features",
     "benefits": "Benefits",
     "faq": "FAQ"
-  },
-  "waitlist": {
-    "title": "Join our Waitlist",
-    "button": "Sign Up",
-    "success": "You've been added to our waitlist!"
   }
 }

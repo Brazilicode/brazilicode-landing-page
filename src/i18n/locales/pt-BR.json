@@ -1,56 +1,70 @@
 {
   "hero": {
-    "title": "Quebre <span class='text-primary'>Barreiras</span>, Construa <span class='text-primary'>Pontes</span>",
-    "subtitle": "Brazilicode oferece chat em tempo real, transcrição e tradução com integração de vídeo, permitindo colaboração perfeita entre empresas globais e desenvolvedores brasileiros de alto nível."
-  },
-  "benefits": {
-    "title": "Benefícios",
-    "description": "Descubra como a Brazilicode pode ajudar sua empresa.",
-    "questions": [
-      {
-        "question": "Como funciona o serviço?",
-        "answer": "Nosso serviço conecta empresas a desenvolvedores brasileiros qualificados."
-      },
-      {
-        "question": "Quais são os custos?",
-        "answer": "Os custos variam dependendo do projeto e das necessidades específicas."
-      }
-    ]
-  },
-  "features": {
-    "title": "Recursos",
-    "description": "Explore os recursos que oferecemos.",
-    "list": [
-      "Chat em tempo real",
-      "Transcrição automática",
-      "Integração de vídeo"
-    ]
+    "title": "Quebre Barreiras, Construa Pontes",
+    "subtitle": "Chat em tempo real, transcrição e tradução. Desbloqueie o melhor talento tech brasileiro com comunicação sem fronteiras."
   },
   "solution": {
-    "title": "Solução",
-    "description": "A Brazilicode oferece uma solução completa para suas necessidades de desenvolvimento."
+    "title": "Comunicação Sem Limites",
+    "description": "Brazilicode oferece chat em tempo real, transcrição e tradução com integração de vídeo, permitindo colaboração perfeita entre empresas globais e desenvolvedores brasileiros de alto nível."
+  },
+  "benefits": {
+    "title": "A Plataforma Projetada para Colaboração Global",
+    "developers": {
+      "income": "Ganhe em dólares e multiplique sua renda",
+      "opportunities": "Trabalhe com empresas globais e expanda suas oportunidades de carreira",
+      "communication": "Comunicação fluida com tradução e transcrição em tempo real",
+      "market": "Acesse uma economia de 200 bilhões de dólares trabalhando remotamente"
+    },
+    "companies": {
+      "talent": "Acesse os melhores talentos em tecnologia do Brasil sem barreiras linguísticas",
+      "scale": "Escale sua equipe com desenvolvedores altamente qualificados",
+      "collaboration": "Chat, transcrição e tradução em tempo real para uma colaboração perfeita",
+      "costs": "Economize tempo e reduza custos contratando especialistas remotos"
+    }
+  },
+  "features": {
+    "title": "Plataforma Completa de Colaboração"
   },
   "faq": {
-    "title": "Perguntas Frequentes",
-    "questions": [
-      {
-        "question": "Qual é o tempo de resposta?",
-        "answer": "Nosso tempo de resposta é geralmente de 24 horas."
+    "title": "Dúvidas? Nós Temos as Respostas",
+    "questions": {
+      "translation": {
+        "question": "Como funciona a tradução em tempo real?",
+        "answer": "Nossas ferramentas com IA fornecem traduções instantâneas durante chats e videochamadas, garantindo comunicação clara."
       },
-      {
-        "question": "Como posso me inscrever?",
-        "answer": "Você pode se inscrever através do nosso site."
+      "transcriptions": {
+        "question": "Posso baixar as transcrições do chat?",
+        "answer": "Sim, todas as transcrições de chat e vídeo estão disponíveis para download em vários idiomas."
+      },
+      "industries": {
+        "question": "Para quais setores vocês atendem?",
+        "answer": "Nos especializamos em conectar empresas de tecnologia com os melhores desenvolvedores brasileiros, mas estamos abertos a outros setores."
+      },
+      "security": {
+        "question": "Quão segura é a plataforma?",
+        "answer": "Usamos criptografia ponta a ponta para garantir que todas as comunicações e dados estejam seguros."
+      },
+      "onboarding": {
+        "question": "Como é o processo de integração?",
+        "answer": "É rápido e simples! Você pode começar a colaborar com talentos em menos de duas semanas."
       }
-    ]
-  },
-  "nav": {
-    "features": "Recursos",
-    "benefits": "Benefícios",
-    "faq": "Perguntas Frequentes"
+    }
   },
   "waitlist": {
-    "title": "Inscreva-se na lista de espera",
-    "button": "Inscrever-se",
-    "success": "Você foi adicionado à lista de espera!"
+    "button": "Entre na lista de espera e inicie sua carreira global hoje!",
+    "title": "Escolha Seu Caminho",
+    "developer": "Sou Desenvolvedor",
+    "company": "Sou Empresa",
+    "back": "← Voltar à seleção",
+    "submit": "Enviar e Participar",
+    "success": {
+      "developer": "Obrigado por se inscrever! Em breve entraremos em contato para conectar você com empresas globais.",
+      "company": "Obrigado por se inscrever! Nossa equipe entrará em contato para ajudá-lo a encontrar os melhores talentos."
+    }
+  },
+  "nav": {
+    "features": "Funcionalidades",
+    "benefits": "Benefícios",
+    "faq": "FAQ"
   }
 }

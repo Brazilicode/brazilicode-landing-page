@@ -70,17 +70,15 @@ const Index = () => {
       {/* Hero Section */}
       <section className="container mx-auto py-20 text-center relative">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent rounded-3xl blur-3xl -z-10" />
-        <h1 
-          className="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn"
-          dangerouslySetInnerHTML={{ __html: t('hero.title') }}
-        />
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">
+          {t('hero.title')}
+        </h1>
         <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto animate-fadeIn">
           {t('hero.subtitle')}
         </p>
         <WaitlistDialog />
       </section>
 
-      {/* Rest of the components */}
       {/* Solution Section */}
       <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
         <div className="container mx-auto text-center">
