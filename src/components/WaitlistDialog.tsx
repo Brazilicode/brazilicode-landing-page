@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
-import { addDeveloperToWaitlist, addCompanyToWaitlist } from "@/lib/supabase/waitlist";
 
 const developerRoles = [
   "Full Stack", "Front End", "Back End", "Mobile Developer",
@@ -42,64 +41,16 @@ export function WaitlistDialog() {
   const [open, setOpen] = useState(false);
   const [userType, setUserType] = useState<"developer" | "company" | null>(null);
   const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const { t } = useTranslation();
   
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const formData = new FormData(e.currentTarget);
-      
-      if (userType === "developer") {
-        await addDeveloperToWaitlist(
-          {
-            full_name: formData.get('name') as string,
-            email: formData.get('email') as string,
-            role: 'developer',
-          },
-          {
-            seniority: formData.get('seniority') as string,
-            stack: selectedStacks,
-            birthdate: formData.get('birthdate') as string,
-            developer_role: formData.get('role') as string,
-          }
-        );
-      } else {
-        await addCompanyToWaitlist(
-          {
-            full_name: formData.get('responsibleName') as string,
-            email: formData.get('corporateEmail') as string,
-            role: 'company',
-          },
-          {
-            company_name: formData.get('companyName') as string,
-            responsible_name: formData.get('responsibleName') as string,
-            company_role: formData.get('role') as string,
-            company_size: formData.get('companySize') as string,
-            category: formData.get('category') as string,
-            corporate_email: formData.get('corporateEmail') as string,
-          }
-        );
-      }
-
-      toast({
-        title: t('waitlist.success.title'),
-        description: t('waitlist.success.description'),
-      });
-      setOpen(false);
-    } catch (error) {
-      console.error('Error submitting to waitlist:', error);
-      toast({
-        title: t('waitlist.error.title'),
-        description: t('waitlist.error.description'),
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    toast({
+      title: "Success!",
+      description: "You've been added to our waitlist. We'll be in touch soon!",
+    });
+    setOpen(false);
   };
 
   const handleStackToggle = (stack: string) => {

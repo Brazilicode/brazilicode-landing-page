@@ -1,18 +1,70 @@
 {
-  "waitlist": {
-    "button": "Entrar na lista de espera",
-    "title": "Junte-se à nossa lista de espera",
-    "developer": "Desenvolvedor",
-    "company": "Empresa",
-    "back": "Voltar",
-    "submit": "Enviar",
-    "success": {
-      "title": "Sucesso!",
-      "description": "Você foi adicionado à nossa lista de espera. Entraremos em contato em breve!"
+  "hero": {
+    "title": "Quebre Barreiras, Conecte o Mundo",
+    "subtitle": "Chat, transcrição e tradução em tempo real. Liberte o potencial dos melhores talentos tech do Brasil com uma comunicação sem fronteiras."
+  },
+  "solution": {
+    "title": "Comunicação Sem Limites",
+    "description": "O Brazilicode conecta empresas globais a desenvolvedores brasileiros, eliminando barreiras linguísticas com chat em tempo real, transcrição automática e tradução integrada a vídeo."
+  },
+  "benefits": {
+    "title": "Uma Plataforma Feita para Colaboração Global",
+    "developers": {
+      "income": "Receba em dólares e veja sua renda crescer exponencialmente",
+      "opportunities": "Conquiste novas oportunidades trabalhando com empresas globais",
+      "communication": "Garanta conversas claras com tradução e transcrição em tempo real",
+      "market": "Acesse uma economia global de US$ 200 bilhões sem sair do Brasil"
     },
-    "error": {
-      "title": "Erro",
-      "description": "Ocorreu um erro ao tentar adicionar você à lista de espera. Por favor, tente novamente."
+    "companies": {
+      "talent": "Contrate os melhores talentos tech do Brasil, sem barreiras linguísticas",
+      "scale": "Escale sua equipe rapidamente com desenvolvedores qualificados",
+      "collaboration": "Facilite colaborações com chat, transcrição e tradução em tempo real",
+      "costs": "Reduza custos e economize tempo ao contratar especialistas remotos"
     }
+  },
+  "features": {
+    "title": "Tudo o que Você Precisa para uma Colaboração Eficiente"
+  },
+  "faq": {
+    "title": "Dúvidas? Nós Temos as Respostas",
+    "questions": {
+      "translation": {
+        "question": "Como funciona a tradução em tempo real?",
+        "answer": "Nossa tecnologia baseada em IA traduz mensagens e transcrições instantaneamente, permitindo uma comunicação eficiente e natural."
+      },
+      "transcriptions": {
+        "question": "É possível baixar as transcrições?",
+        "answer": "Sim! Todas as transcrições de chats e videochamadas podem ser baixadas em vários idiomas."
+      },
+      "industries": {
+        "question": "Quais tipos de empresas podem usar a plataforma?",
+        "answer": "Atendemos principalmente empresas de tecnologia, mas nossa solução é flexível para diversos setores, como marketing, saúde e fintechs."
+      },
+      "security": {
+        "question": "A plataforma é segura?",
+        "answer": "Sim, utilizamos criptografia de ponta a ponta para proteger todas as comunicações e garantir a privacidade dos dados."
+      },
+      "onboarding": {
+        "question": "Como funciona o processo de integração?",
+        "answer": "É simples e rápido. Você pode começar a colaborar com talentos em menos de duas semanas."
+      }
+    }
+  },
+  "waitlist": {
+    "button": "Entre na lista de espera",
+    "title": "Escolha Seu Perfil",
+    "developer": "Sou Desenvolvedor",
+    "company": "Sou Empresa",
+    "back": "← Voltar para a Seleção",
+    "submit": "Enviar e Entrar",
+    "success": {
+      "developer": "Obrigado por se inscrever! Nossa equipe entrará em contato em breve para conectá-lo a empresas globais.",
+      "company": "Obrigado por se inscrever! Nossa equipe entrará em contato em breve para ajudá-lo a encontrar os melhores desenvolvedores."
+    }
+  },
+  "nav": {
+    "features": "Funcionalidades",
+    "benefits": "Benefícios",
+    "faq": "FAQ"
   }
 }
