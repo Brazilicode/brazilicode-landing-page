@@ -1,8 +1,6 @@
 import { WaitlistDialog } from "@/components/WaitlistDialog";
 import { Stats } from "@/components/Stats";
-import { LanguageSelector } from "@/components/LanguageSelector";
 import { Globe, Clock, DollarSign, Target, Bot, Users, Network, Handshake } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 const challenges = [
   {
@@ -60,18 +58,21 @@ const faqItems = [
 ];
 
 const Index = () => {
-  const { t } = useTranslation();
-
   return (
     <div className="min-h-screen bg-dark text-white">
       {/* Header */}
       <header className="container mx-auto pt-6 flex justify-between items-center">
-        <div className="text-primary text-2xl font-alata">Brazilicode</div>
+        <div>
+          <img 
+            src="/lovable-uploads/6369cd1a-0d76-4f97-84fe-759caf0fc04d.png" 
+            alt="Brazilicode Logo" 
+            className="h-12"
+          />
+        </div>
         <nav className="hidden md:flex gap-8 items-center font-mono">
           <a href="#challenges" className="hover:text-primary transition-colors">Desafios</a>
           <a href="#solutions" className="hover:text-primary transition-colors">Soluções</a>
           <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
-          <LanguageSelector />
         </nav>
       </header>
 
@@ -82,11 +83,9 @@ const Index = () => {
           Conquiste o <span className="text-primary">mercado global</span> sem se <br></br><span className="text-secondary"> preocupar com o idioma!</span>
         </h1>
         <p className="font-mono text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto animate-fadeIn">
-        🚀 Seja um desenvolvedor sem fronteiras. Inscreva-se na nossa lista de espera e tenha acesso a oportunidades exclusivas de trabalho internacional,
-        sem precisar falar inglês!
-      </p>
-
-
+          🚀 Seja um desenvolvedor sem fronteiras. Inscreva-se na nossa lista de espera e tenha acesso a oportunidades exclusivas de trabalho internacional,
+          sem precisar falar inglês!
+        </p>
 
         <WaitlistDialog />
       </section>
@@ -131,13 +130,13 @@ const Index = () => {
 
       {/* Stats Section */}
       <section className="container mx-auto py-20">
-      <h2 className="font-alata text-3xl md:text-4xl font-bold mb-6 text-center text-secondary">
-        Oportunidade Sem Fronteiras 🚀
-      </h2>
-      <p className="font-mono text-lg text-gray-300 text-center mb-12">
-        O mercado global está em crescimento e os devs brasileiros têm um papel crucial. Veja os números:
-      </p>
-      <Stats />
+        <h2 className="font-alata text-3xl md:text-4xl font-bold mb-6 text-center text-secondary">
+          Oportunidade Sem Fronteiras 🚀
+        </h2>
+        <p className="font-mono text-lg text-gray-300 text-center mb-12">
+          O mercado global está em crescimento e os devs brasileiros têm um papel crucial. Veja os números:
+        </p>
+        <Stats />
       </section>
 
       {/* FAQ Section */}
