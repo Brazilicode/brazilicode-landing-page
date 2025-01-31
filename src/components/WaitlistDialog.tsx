@@ -125,7 +125,7 @@ export function WaitlistDialog() {
 
       toast({
         title: "Enviado com sucesso",
-        description: "Seus dados foram registrados com sucesso!",
+        description: "Obrigado por se inscrever! Nossa equipe entrará em contato em breve para conectá-lo a empresas globais.",
       });
       setShowCommissionDialog(false);
       setOpen(false);
