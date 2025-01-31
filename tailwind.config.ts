@@ -25,22 +25,33 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#5e98e5", // Blue from the palette
+          DEFAULT: "#34D399",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#428e36", // Green from the palette
+          DEFAULT: "#3B82F6",
           foreground: "#FFFFFF",
         },
-        dark: {
-          DEFAULT: "#292929", // Dark gray from the palette
-          foreground: "#FFFFFF",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
-      },
-      fontFamily: {
-        alata: ["Alata", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
-        sans: ["Inter", "sans-serif"], // Keeping Inter as fallback
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
       keyframes: {
         "accordion-down": {
@@ -55,11 +66,16 @@ export default {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out forwards",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
