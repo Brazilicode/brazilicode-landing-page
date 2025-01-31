@@ -62,13 +62,8 @@ const Index = () => {
     <div className="min-h-screen bg-dark text-white">
       {/* Header */}
       <header className="container mx-auto pt-6 flex justify-between items-center">
-        <div>
-          <img 
-            src="/lovable-uploads/6369cd1a-0d76-4f97-84fe-759caf0fc04d.png" 
-            alt="Brazilicode Logo" 
-            className="h-12"
-          />
-        </div>
+        <div className="text-primary text-2xl font-alata">
+          Brazilicode</div>
         <nav className="hidden md:flex gap-8 items-center font-mono">
           <a href="#challenges" className="hover:text-primary transition-colors">Desafios</a>
           <a href="#solutions" className="hover:text-primary transition-colors">Soluções</a>
@@ -93,7 +88,7 @@ const Index = () => {
       {/* Challenges Section */}
       <section id="challenges" className="py-20 bg-gradient-to-b from-dark to-dark/90">
         <div className="container mx-auto text-center">
-          <h2 className="font-alata text-3xl md:text-4xl font-bold mb-12">O Desafio dos Devs Brasileiros</h2>
+          <h2 className="font-alata text-primary md:text-4xl font-bold mb-12">O Desafio dos Devs Brasileiros</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {challenges.map((challenge, index) => (
               <div
@@ -111,7 +106,7 @@ const Index = () => {
 
       {/* Solutions Section */}
       <section id="solutions" className="container mx-auto py-20">
-        <h2 className="font-alata text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 className="font-alata text-three md:text-4xl font-bold mb-12 text-center">
           Como Estamos Mudando Isso
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -141,7 +136,7 @@ const Index = () => {
 
       {/* FAQ Section */}
       <section id="faq" className="container mx-auto py-20">
-        <h2 className="font-alata text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 className="font-alata text-four md:text-4xl font-bold mb-12 text-center">
           Perguntas Frequentes
         </h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
