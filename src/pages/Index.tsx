@@ -1,7 +1,7 @@
 import { WaitlistDialog } from "@/components/WaitlistDialog";
 import { Stats } from "@/components/Stats";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import { Globe, Clock, DollarSign, Target, Robot, Users, Network, Handshake } from "lucide-react";
+import { Globe, Clock, DollarSign, Target, Bot, Users, Network, Handshake } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const challenges = [
@@ -24,7 +24,7 @@ const challenges = [
 
 const solutions = [
   {
-    icon: <Robot className="w-12 h-12 text-secondary" />,
+    icon: <Bot className="w-12 h-12 text-secondary" />,
     title: "IA para Comunicação",
     description: "Quebrando a barreira do idioma com tecnologia avançada.",
   },
