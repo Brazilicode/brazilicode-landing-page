@@ -1,3 +1,4 @@
+
 export type DeveloperRole = 
   | "full stack" 
   | "front end" 
@@ -21,4 +22,6 @@ export interface DeveloperWaitlist {
   phone?: string;
   english_level?: string;
   commission_feedback?: string;
+  role?: DeveloperRole;
+  custom_tech_stack?: string;
 }

@@ -6,13 +6,18 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { useTranslation } from "react-i18next";
 import { addDeveloperToWaitlist } from "@/services/waitlist";
-import type { DeveloperWaitlist } from "@/types/waitlist";
+import type { DeveloperWaitlist, DeveloperRole } from "@/types/waitlist";
 
 const developerRoles = [
-  "Full Stack", "Front End", "Back End", "Mobile Developer",
-  "Data Science", "DevOps", "QA Tester", "Other"
+  { value: "full stack", label: "Full Stack" },
+  { value: "front end", label: "Front End" },
+  { value: "back end", label: "Back End" },
+  { value: "mobile developer", label: "Mobile Developer" },
+  { value: "data science", label: "Data Science" },
+  { value: "devops", label: "DevOps" },
+  { value: "qa tester", label: "QA Tester" },
+  { value: "other", label: "Outros" }
 ];
 
 const englishLevels = [
@@ -28,7 +33,7 @@ const commissionOptions = [
 
 const stacks = [
   "JavaScript", "Python", "Java", "C#", "Ruby", "PHP", "Go",
-  "TypeScript", "React", "Node.js", "Angular", "Vue.js", "Docker", "Kubernetes"
+  "TypeScript", "React", "Node.js", "Angular", "Vue.js", "Docker", "Kubernetes", "Outros"
 ];
 
 export function WaitlistDialog() {
@@ -37,8 +42,9 @@ export function WaitlistDialog() {
   const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<DeveloperWaitlist | null>(null);
+  const [showCustomStack, setShowCustomStack] = useState(false);
+  const [customStack, setCustomStack] = useState("");
   const { toast } = useToast();
-  const { t } = useTranslation();
   
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,14 +53,19 @@ export function WaitlistDialog() {
     try {
       const formData = new FormData(e.currentTarget);
       
+      const finalTechStack = selectedStacks.includes("Outros") 
+        ? [...selectedStacks.filter(stack => stack !== "Outros"), customStack]
+        : selectedStacks;
+
       const developerData: DeveloperWaitlist = {
         full_name: formData.get("name") as string,
         email: formData.get("email") as string,
         birth_date: formData.get("birthdate") as string,
-        tech_stack: selectedStacks,
+        tech_stack: finalTechStack,
         phone: formData.get("phone") as string || undefined,
         english_level: formData.get("englishLevel") as string || undefined,
         commission_feedback: formData.get("feedback") as string || undefined,
+        role: formData.get("role") as DeveloperRole,
       };
 
       setFormData(developerData);
@@ -62,13 +73,37 @@ export function WaitlistDialog() {
     } catch (error: any) {
       console.error("Error in form submission:", error);
       toast({
-        title: t("waitlist.error.title"),
-        description: t("waitlist.error.description"),
+        title: "Erro",
+        description: "Houve um erro ao enviar o formulário. Tente novamente.",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleStackToggle = (stack: string) => {
+    setSelectedStacks(prev => {
+      if (prev.includes(stack)) {
+        if (stack === "Outros") {
+          setShowCustomStack(false);
+          setCustomStack("");
+        }
+        return prev.filter(s => s !== stack);
+      }
+      if (prev.length >= 5) {
+        toast({
+          title: "Limite máximo atingido",
+          description: "Você pode selecionar até 5 tecnologias",
+          variant: "destructive",
+        });
+        return prev;
+      }
+      if (stack === "Outros") {
+        setShowCustomStack(true);
+      }
+      return [...prev, stack];
+    });
   };
 
   const handleCommissionSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -89,8 +124,8 @@ export function WaitlistDialog() {
       await addDeveloperToWaitlist(finalData);
 
       toast({
-        title: t("Enviado com sucesso"),
-        description: t("waitlist.success.developer"),
+        title: "Enviado com sucesso",
+        description: "Seus dados foram registrados com sucesso!",
       });
       setShowCommissionDialog(false);
       setOpen(false);
@@ -98,14 +133,14 @@ export function WaitlistDialog() {
       if (error?.message?.includes("waitlist_developers_email_key") || 
           error?.message?.includes("23505")) {
         toast({
-          title: t("waitlist.error.duplicate.title"),
-          description: t("waitlist.error.duplicate.description.developer"),
+          title: "Email já cadastrado",
+          description: "Este email já está registrado em nossa lista de espera.",
           variant: "destructive"
         });
       } else {
         toast({
-          title: t("waitlist.error.title"),
-          description: t("waitlist.error.description"),
+          title: "Erro",
+          description: "Houve um erro ao enviar o formulário. Tente novamente.",
           variant: "destructive",
         });
       }
@@ -114,35 +149,18 @@ export function WaitlistDialog() {
     }
   };
 
-  const handleStackToggle = (stack: string) => {
-    setSelectedStacks(prev => {
-      if (prev.includes(stack)) {
-        return prev.filter(s => s !== stack);
-      }
-      if (prev.length >= 5) {
-        toast({
-          title: "Maximum stacks reached",
-          description: "You can select up to 5 technologies",
-          variant: "destructive",
-        });
-        return prev;
-      }
-      return [...prev, stack];
-    });
-  };
-
   return (
     <>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 text-lg animate-pulse">
-            {t('waitlist.button')}
+            Entrar na Lista de Espera
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px] max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-center">
-              {t('waitlist.developer')}
+              Cadastro de Desenvolvedor
             </DialogTitle>
           </DialogHeader>
           
@@ -167,6 +185,22 @@ export function WaitlistDialog() {
                 <Label htmlFor="phone">Celular</Label>
                 <Input id="phone" name="phone" type="tel" required className="bg-background" disabled={isSubmitting} />
               </div>
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="role">Função Principal</Label>
+              <Select name="role" required>
+                <SelectTrigger className="bg-background">
+                  <SelectValue placeholder="Selecione sua função" />
+                </SelectTrigger>
+                <SelectContent>
+                  {developerRoles.map((role) => (
+                    <SelectItem key={role.value} value={role.value}>
+                      {role.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="space-y-1">
@@ -202,6 +236,19 @@ export function WaitlistDialog() {
                   </Button>
                 ))}
               </div>
+              {showCustomStack && (
+                <div className="mt-2">
+                  <Label htmlFor="customStack">Especifique sua tecnologia</Label>
+                  <Input
+                    id="customStack"
+                    value={customStack}
+                    onChange={(e) => setCustomStack(e.target.value)}
+                    className="bg-background mt-1"
+                    placeholder="Digite sua tecnologia"
+                    required={selectedStacks.includes("Outros")}
+                  />
+                </div>
+              )}
             </div>
 
             <Button 
@@ -209,7 +256,7 @@ export function WaitlistDialog() {
               className="w-full bg-primary hover:bg-secondary/90 mt-6"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Enviando..." : t('waitlist.submit')}
+              {isSubmitting ? "Enviando..." : "Continuar"}
             </Button>
           </form>
         </DialogContent>
