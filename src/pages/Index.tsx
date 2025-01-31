@@ -79,10 +79,11 @@ const Index = () => {
       <section className="container mx-auto py-20 text-center relative">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent rounded-3xl blur-3xl -z-10" />
         <h1 className="font-alata text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">
-          Conectando <span className="text-primary">Devs Brasileiros</span> ao <span className="text-secondary">Mundo</span>
+          Conquiste o <span className="text-primary">mercado global</span> sem se <br></br><span className="text-secondary"> preocupar com o idioma!</span>
         </h1>
         <p className="font-mono text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto animate-fadeIn">
-        🚀 Conecte-se ao mercado global e aumente seus ganhos como dev. Inscreva-se agora para ter acesso exclusivo às melhores oportunidades!
+        🚀 Seja um desenvolvedor sem fronteiras. Inscreva-se na nossa lista de espera e tenha acesso a oportunidades exclusivas de trabalho internacional,
+        sem precisar falar inglês!
       </p>
 
 
