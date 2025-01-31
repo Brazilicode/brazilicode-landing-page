@@ -13,7 +13,7 @@ const challenges = [
   {
     icon: <Clock className="w-12 h-12 text-primary" />,
     title: "Carga Excessiva",
-    description: "Muitos trabalham 12 a 14 horas por dia, o que pode levar ao burnout.",
+    description: "Muitos desenvolvedores enfrentam jornadas exaustivas de 12 a 14 horas diárias, com baixa remuneração, aumentando o risco de burnout.",
   },
   {
     icon: <Globe className="w-12 h-12 text-primary" />,
