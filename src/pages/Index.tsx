@@ -24,17 +24,17 @@ const challenges = [
 
 const solutions = [
   {
-    icon: <Network className="w-12 h-12 text-secondary" />,
+    icon: <Network className="w-12 h-12 text-three" />,
     title: "Conexões Globais",
     description: "Parcerias com hubs de inovação, agências e startups internacionais.",
   },
   {
-    icon: <Bot className="w-12 h-12 text-secondary" />,
+    icon: <Bot className="w-12 h-12 text-three" />,
     title: "Barreiras Eliminadas",
     description: "Uso de IA para superar desafios linguísticos e facilitar a contratação.",
   },
   {
-    icon: <Users className="w-12 h-12 text-secondary" />,
+    icon: <Users className="w-12 h-12 text-three" />,
     title: "Comunidade Forte",
     description: "Ambiente colaborativo para compartilhar experiências e construir reputação.",
   },
@@ -82,8 +82,11 @@ const Index = () => {
           Conectando <span className="text-primary">Devs Brasileiros</span> ao <span className="text-secondary">Mundo</span>
         </h1>
         <p className="font-mono text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto animate-fadeIn">
-          Junte-se à comunidade que está exportando serviços para o mundo todo.
-        </p>
+        🚀 Conecte-se ao mercado global e aumente seus ganhos como dev. Inscreva-se agora para ter acesso exclusivo às melhores oportunidades!
+      </p>
+
+
+
         <WaitlistDialog />
       </section>
 
@@ -127,7 +130,13 @@ const Index = () => {
 
       {/* Stats Section */}
       <section className="container mx-auto py-20">
-        <Stats />
+      <h2 className="font-alata text-3xl md:text-4xl font-bold mb-6 text-center text-secondary">
+        Oportunidade Sem Fronteiras 🚀
+      </h2>
+      <p className="font-mono text-lg text-gray-300 text-center mb-12">
+        O mercado global está em crescimento e os devs brasileiros têm um papel crucial. Veja os números:
+      </p>
+      <Stats />
       </section>
 
       {/* FAQ Section */}
@@ -141,7 +150,7 @@ const Index = () => {
               key={index}
               className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
             >
-              <h3 className="font-alata text-xl font-bold mb-3 text-primary">{item.question}</h3>
+              <h3 className="font-alata text-xl font-bold mb-3 text-four">{item.question}</h3>
               <p className="font-mono text-gray-300">{item.answer}</p>
             </div>
           ))}

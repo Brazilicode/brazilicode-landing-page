@@ -6,7 +6,7 @@ interface StatProps {
 function Stat({ number, description }: StatProps) {
   return (
     <div className="text-center p-6 bg-white/5 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-colors">
-      <div className="text-4xl font-alata font-bold text-primary mb-2">{number}</div>
+      <div className="text-4xl font-alata font-bold text-secondary mb-2">{number}</div>
       <div className="font-mono text-gray-300">{description}</div>
     </div>
   );

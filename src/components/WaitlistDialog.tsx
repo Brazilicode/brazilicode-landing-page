@@ -111,7 +111,7 @@ export function WaitlistDialog() {
         <form onSubmit={handleSubmit} className="space-y-3 mt-4">
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name">Nome Completo</Label>
               <Input id="name" name="name" required className="bg-background" disabled={isSubmitting} />
             </div>
             <div className="space-y-1">
@@ -122,20 +122,20 @@ export function WaitlistDialog() {
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1">
-              <Label htmlFor="birthdate">Date of Birth</Label>
+              <Label htmlFor="birthdate">Data de Nascimento</Label>
               <Input id="birthdate" name="birthdate" type="date" required className="bg-background" disabled={isSubmitting} />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="phone">Phone (optional)</Label>
-              <Input id="phone" name="phone" type="tel" className="bg-background" disabled={isSubmitting} />
+              <Label htmlFor="phone">Celular</Label>
+              <Input id="phone" name="phone" type="tel" required className="bg-background" disabled={isSubmitting} />
             </div>
           </div>
 
           <div className="space-y-1">
-            <Label htmlFor="englishLevel">English Level (optional)</Label>
-            <Select name="englishLevel">
+            <Label htmlFor="englishLevel">Nível de Inglês</Label>
+            <Select name="englishLevel" required>
               <SelectTrigger className="bg-background">
-                <SelectValue placeholder="Select your English level" />
+                <SelectValue placeholder="Selecione seu nível de inglês" />
               </SelectTrigger>
               <SelectContent>
                 {englishLevels.map((level) => (
@@ -145,6 +145,9 @@ export function WaitlistDialog() {
                 ))}
               </SelectContent>
             </Select>
+            <p className="text-red-500 text-sm hidden" id="englishLevelError">
+              Por favor, selecione um nível de inglês.
+            </p>
           </div>
 
           <div className="space-y-1">
@@ -167,7 +170,7 @@ export function WaitlistDialog() {
           </div>
 
           <div className="space-y-1">
-            <Label htmlFor="feedback">Additional Comments (optional)</Label>
+            <Label htmlFor="feedback">Comentários Adicionais (opcional)</Label>
             <Input
               id="feedback"
               name="feedback"
@@ -179,7 +182,7 @@ export function WaitlistDialog() {
 
           <Button 
             type="submit" 
-            className="w-full bg-primary hover:bg-primary/90 mt-6"
+            className="w-full bg-primary hover:bg-secondary/90 mt-6"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : t('waitlist.submit')}
