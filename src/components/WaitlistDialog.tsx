@@ -15,7 +15,7 @@ const developerRoles = [
 ];
 
 const englishLevels = [
-  "Basic", "Intermediate", "Advanced", "Fluent", "Native"
+  "Básico", "Intermediário", "Avançado", "Fluente", "Nativo"
 ];
 
 const commissionOptions = [
@@ -202,7 +202,7 @@ export function WaitlistDialog() {
 
             <Button 
               type="submit" 
-              className="w-full bg-primary hover:bg-primary/90 mt-6"
+              className="w-full bg-primary hover:bg-secondary/90 mt-6"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Enviando..." : t('waitlist.submit')}
@@ -253,7 +253,7 @@ export function WaitlistDialog() {
 
             <Button 
               type="submit" 
-              className="w-full bg-primary hover:bg-primary/90"
+              className="w-full bg-primary hover:bg-secondary/90"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Enviando..." : "Enviar Feedback"}
