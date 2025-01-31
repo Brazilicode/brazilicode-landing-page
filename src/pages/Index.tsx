@@ -1,6 +1,9 @@
+
 import { WaitlistDialog } from "@/components/WaitlistDialog";
 import { Stats } from "@/components/Stats";
 import { Globe, Clock, DollarSign, Target, Bot, Users, Network, Handshake } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const challenges = [
   {
@@ -58,12 +61,29 @@ const faqItems = [
 ];
 
 const Index = () => {
+  const [showFloatingCTA, setShowFloatingCTA] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setShowFloatingCTA(scrollPosition > 800);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-dark text-white">
       {/* Header */}
       <header className="container mx-auto pt-6 flex justify-between items-center">
-        <div className="text-primary text-2xl font-alata">
-          Brazilicode</div>
+        <div>
+          <img 
+            src="/lovable-uploads/6369cd1a-0d76-4f97-84fe-759caf0fc04d.png" 
+            alt="Brazilicode Logo" 
+            className="h-12"
+          />
+        </div>
         <nav className="hidden md:flex gap-8 items-center font-mono">
           <a href="#challenges" className="hover:text-primary transition-colors">Desafios</a>
           <a href="#solutions" className="hover:text-primary transition-colors">Soluções</a>
@@ -71,8 +91,9 @@ const Index = () => {
         </nav>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero Section with Background Image */}
       <section className="container mx-auto py-20 text-center relative">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')] bg-cover bg-center opacity-10 rounded-3xl" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent rounded-3xl blur-3xl -z-10" />
         <h1 className="font-alata text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">
           Conquiste o <span className="text-primary">mercado global</span> sem se <br></br><span className="text-secondary"> preocupar com o idioma!</span>
@@ -85,7 +106,34 @@ const Index = () => {
         <WaitlistDialog />
       </section>
 
-      {/* Challenges Section */}
+      {/* Global Success Story */}
+      <section className="container mx-auto py-16">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative group">
+            <img 
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+              alt="Desenvolvedor trabalhando em projeto internacional" 
+              className="rounded-lg shadow-xl transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent rounded-lg flex items-end p-6">
+              <p className="text-white font-mono">
+                "Consegui triplicar minha renda trabalhando remotamente para uma empresa dos EUA" - João Silva
+              </p>
+            </div>
+          </div>
+          <div className="space-y-6">
+            <h2 className="font-alata text-3xl font-bold text-primary">
+              Histórias de Sucesso
+            </h2>
+            <p className="font-mono text-gray-300">
+              Nossos desenvolvedores estão conquistando oportunidades globais e transformando suas carreiras. 
+              Com a Brazilicode, você também pode fazer parte dessa revolução no mercado tech.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges Section with Enhanced Visuals */}
       <section id="challenges" className="py-20 bg-gradient-to-b from-dark to-dark/90">
         <div className="container mx-auto text-center">
           <h2 className="font-alata text-primary md:text-4xl font-bold mb-12">O Desafio dos Devs Brasileiros</h2>
@@ -93,9 +141,9 @@ const Index = () => {
             {challenges.map((challenge, index) => (
               <div
                 key={index}
-                className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2"
               >
-                <div className="mb-4">{challenge.icon}</div>
+                <div className="mb-4 animate-bounce">{challenge.icon}</div>
                 <h3 className="font-alata text-xl font-bold mb-2">{challenge.title}</h3>
                 <p className="font-mono text-gray-300">{challenge.description}</p>
               </div>
@@ -104,7 +152,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Solutions Section */}
+      {/* Solutions Section with Animation */}
       <section id="solutions" className="container mx-auto py-20">
         <h2 className="font-alata text-three md:text-4xl font-bold mb-12 text-center">
           Como Estamos Mudando Isso
@@ -113,9 +161,9 @@ const Index = () => {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
+              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
             >
-              <div className="mb-4">{solution.icon}</div>
+              <div className="mb-4 animate-pulse">{solution.icon}</div>
               <h3 className="font-alata text-xl font-bold mb-2">{solution.title}</h3>
               <p className="font-mono text-gray-300">{solution.description}</p>
             </div>
@@ -143,7 +191,7 @@ const Index = () => {
           {faqItems.map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
+              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
             >
               <h3 className="font-alata text-xl font-bold mb-3 text-four">{item.question}</h3>
               <p className="font-mono text-gray-300">{item.answer}</p>
@@ -152,6 +200,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="container mx-auto py-20 border-t border-white/10">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
@@ -178,6 +227,13 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating CTA Button */}
+      {showFloatingCTA && (
+        <div className="fixed bottom-8 right-8 animate-bounce">
+          <WaitlistDialog className="shadow-lg shadow-primary/20" />
+        </div>
+      )}
     </div>
   );
 };
