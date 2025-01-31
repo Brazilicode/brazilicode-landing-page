@@ -7,7 +7,7 @@ function Stat({ number, description }: StatProps) {
   return (
     <div className="text-center p-6 bg-white/5 rounded-lg backdrop-blur-sm">
       <div className="text-4xl font-bold text-primary mb-2">{number}</div>
-      <div className="text-gray-200">{description}</div>
+      <div className="text-muted">{description}</div>
     </div>
   );
 }
