@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +16,10 @@ const developerRoles = [
 ];
 
 const englishLevels = [
-  "Básico", "Intermediário", "Avançado", "Fluente", "Nativo"
+  { label: "Básico", value: "basic" },
+  { label: "Intermediário", value: "intermediate" },
+  { label: "Avançado", value: "advanced" },
+  { label: "Fluente", value: "fluent" }
 ];
 
 const commissionOptions = [
@@ -173,8 +177,8 @@ export function WaitlistDialog() {
                 </SelectTrigger>
                 <SelectContent>
                   {englishLevels.map((level) => (
-                    <SelectItem key={level} value={level.toLowerCase()}>
-                      {level}
+                    <SelectItem key={level.value} value={level.value}>
+                      {level.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
