@@ -6,38 +6,57 @@ import { useTranslation } from "react-i18next";
 
 const challenges = [
   {
-    icon: <Clock className="w-12 h-12 text-primary" />,
-    title: "Jornadas Longas",
-    description: "Alto nível de aprendizado, mas com desgaste excessivo.",
-  },
-  {
     icon: <DollarSign className="w-12 h-12 text-primary" />,
-    title: "Moeda Desvalorizada",
-    description: "Dificuldade em alcançar remuneração adequada.",
+    title: "Salários Desvalorizados",
+    description: "Recebem em real, uma moeda fraca, o que reduz sua competitividade no mercado global.",
   },
   {
-    icon: <Target className="w-12 h-12 text-primary" />,
-    title: "Busca por Crescimento",
-    description: "Desejo de expansão e alcance global.",
+    icon: <Clock className="w-12 h-12 text-primary" />,
+    title: "Carga Excessiva",
+    description: "Muitos trabalham 12 a 14 horas por dia, o que pode levar ao burnout.",
+  },
+  {
+    icon: <Globe className="w-12 h-12 text-primary" />,
+    title: "Barreiras Internacionais",
+    description: "Enfrentam obstáculos linguísticos, culturais e burocráticos para oportunidades globais.",
   },
 ];
 
 const solutions = [
   {
-    icon: <Bot className="w-12 h-12 text-secondary" />,
-    title: "IA para Comunicação",
-    description: "Quebrando a barreira do idioma com tecnologia avançada.",
-  },
-  {
-    icon: <Handshake className="w-12 h-12 text-secondary" />,
-    title: "Oportunidades em Dólar",
-    description: "Simplificando contratações internacionais.",
-  },
-  {
     icon: <Network className="w-12 h-12 text-secondary" />,
-    title: "Comunidade Colaborativa",
-    description: "Networking e crescimento profissional conjunto.",
+    title: "Conexões Globais",
+    description: "Parcerias com hubs de inovação, agências e startups internacionais.",
   },
+  {
+    icon: <Bot className="w-12 h-12 text-secondary" />,
+    title: "Barreiras Eliminadas",
+    description: "Uso de IA para superar desafios linguísticos e facilitar a contratação.",
+  },
+  {
+    icon: <Users className="w-12 h-12 text-secondary" />,
+    title: "Comunidade Forte",
+    description: "Ambiente colaborativo para compartilhar experiências e construir reputação.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "Como funciona a tradução em tempo real?",
+    answer: "Nossa tecnologia baseada em IA traduz mensagens e chamadas instantaneamente, permitindo uma comunicação natural e eficiente entre desenvolvedores e empresas globais."
+  },
+  {
+    question: "Quais são os benefícios de receber em dólar?",
+    answer: "Além da valorização cambial, você tem acesso a salários competitivos internacionalmente e maior poder de compra, aumentando significativamente sua renda."
+  },
+  {
+    question: "Como vocês garantem a qualidade das oportunidades?",
+    answer: "Fazemos uma curadoria rigorosa das empresas parceiras, garantindo projetos relevantes, pagamentos justos e ambiente de trabalho saudável."
+  },
+  {
+    question: "Qual o processo de onboarding?",
+    answer: "O processo é simples e rápido: cadastro, verificação de perfil, matching com oportunidades e início dos trabalhos, tudo com suporte personalizado."
+  }
 ];
 
 const Index = () => {
@@ -51,6 +70,7 @@ const Index = () => {
         <nav className="hidden md:flex gap-8 items-center font-mono">
           <a href="#challenges" className="hover:text-primary transition-colors">Desafios</a>
           <a href="#solutions" className="hover:text-primary transition-colors">Soluções</a>
+          <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
           <LanguageSelector />
         </nav>
       </header>
@@ -108,6 +128,24 @@ const Index = () => {
       {/* Stats Section */}
       <section className="container mx-auto py-20">
         <Stats />
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="container mx-auto py-20">
+        <h2 className="font-alata text-3xl md:text-4xl font-bold mb-12 text-center">
+          Perguntas Frequentes
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {faqItems.map((item, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
+            >
+              <h3 className="font-alata text-xl font-bold mb-3 text-primary">{item.question}</h3>
+              <p className="font-mono text-gray-300">{item.answer}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <footer className="container mx-auto py-20 border-t border-white/10">
