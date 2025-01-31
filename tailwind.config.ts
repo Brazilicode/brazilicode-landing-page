@@ -25,13 +25,14 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#34D399",
+          DEFAULT: "#5e98e5",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#3B82F6",
+          DEFAULT: "#428e36",
           foreground: "#FFFFFF",
         },
+        dark: "#292929",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -52,6 +53,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        alata: ['Alata', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       keyframes: {
         "accordion-down": {

@@ -9,73 +9,40 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      waitlist_companies: {
-        Row: {
-          category: Database["public"]["Enums"]["company_category"]
-          company_name: string
-          company_size: Database["public"]["Enums"]["company_size"]
-          corporate_email: string
-          created_at: string
-          id: string
-          responsible_name: string
-          role: Database["public"]["Enums"]["company_role"]
-          status: string
-        }
-        Insert: {
-          category: Database["public"]["Enums"]["company_category"]
-          company_name: string
-          company_size: Database["public"]["Enums"]["company_size"]
-          corporate_email: string
-          created_at?: string
-          id?: string
-          responsible_name: string
-          role: Database["public"]["Enums"]["company_role"]
-          status?: string
-        }
-        Update: {
-          category?: Database["public"]["Enums"]["company_category"]
-          company_name?: string
-          company_size?: Database["public"]["Enums"]["company_size"]
-          corporate_email?: string
-          created_at?: string
-          id?: string
-          responsible_name?: string
-          role?: Database["public"]["Enums"]["company_role"]
-          status?: string
-        }
-        Relationships: []
-      }
       waitlist_developers: {
         Row: {
           birth_date: string
+          commission_feedback: string | null
           created_at: string
           email: string
+          english_level: string | null
           full_name: string
           id: string
-          role: Database["public"]["Enums"]["developer_role"]
-          seniority: Database["public"]["Enums"]["seniority_level"]
+          phone: string | null
           status: string
           tech_stack: string[]
         }
         Insert: {
           birth_date: string
+          commission_feedback?: string | null
           created_at?: string
           email: string
+          english_level?: string | null
           full_name: string
           id?: string
-          role: Database["public"]["Enums"]["developer_role"]
-          seniority: Database["public"]["Enums"]["seniority_level"]
+          phone?: string | null
           status?: string
           tech_stack: string[]
         }
         Update: {
           birth_date?: string
+          commission_feedback?: string | null
           created_at?: string
           email?: string
+          english_level?: string | null
           full_name?: string
           id?: string
-          role?: Database["public"]["Enums"]["developer_role"]
-          seniority?: Database["public"]["Enums"]["seniority_level"]
+          phone?: string | null
           status?: string
           tech_stack?: string[]
         }
@@ -117,6 +84,7 @@ export type Database = {
         | "devops"
         | "qa tester"
         | "other"
+      english_level: "basic" | "intermediate" | "advanced" | "fluent"
       seniority_level:
         | "junior (0-2 years)"
         | "mid-level (3-5 years)"
