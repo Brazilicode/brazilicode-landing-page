@@ -17,8 +17,29 @@ const developerRoles = [
   { value: "data science", label: "Data Science" },
   { value: "devops", label: "DevOps" },
   { value: "qa tester", label: "QA Tester" },
+  { value: "ui/ux designer", label: "UI/UX Designer" },
+  { value: "no/low code developer", label: "No/Low Code Developer" },
+  { value: "blockchain", label: "Blockchain" },
+  { value: "security", label: "CyberSecurity" },
+  { value: "game developer", label: "Game Developer" },
+  { value: "ml engineer", label: "Machine Learning Engineer" },
+  { value: "data engineer", label: "Data Engineer" },
+  { value: "cloud engineer", label: "Cloud Engineer" },
+  { value: "embedded developer", label: "Embedded Systems Developer" },
+  { value: "database administrator", label: "Database Administrator (DBA)" },
+  { value: "site reliability engineer", label: "Site Reliability Engineer (SRE)" },
+  { value: "ai engineer", label: "AI Engineer" },
+  { value: "iot developer", label: "IoT Developer" },
+  { value: "software architect", label: "Software Architect" },
+  { value: "automation engineer", label: "Automation Engineer" },
+  { value: "robotics developer", label: "Robotics Developer" },
+  { value: "erp developer", label: "ERP Developer" },
+  { value: "crm developer", label: "CRM Developer" },
+  { value: "bi developer", label: "BI Developer" },
+  { value: "consultant", label: "Tech Consultant" },
   { value: "other", label: "Outros" }
 ];
+
 
 const englishLevels = [
   { label: "Básico", value: "basic" },
@@ -33,7 +54,8 @@ const commissionOptions = [
 
 const stacks = [
   "JavaScript", "Python", "Java", "C#", "Ruby", "PHP", "Go",
-  "TypeScript", "React", "Node.js", "Angular", "Vue.js", "Docker", "Kubernetes", "Outros"
+  "TypeScript", "React", "Node.js", "Angular", "Vue.js", "Docker", "Kubernetes",
+  "N8N","FlutterFlow", "Make","Supabase","Next.js", "NestJS", "Express", "Spring Boot", "Flask", "Django", "Laravel", "Rails", "Outros"
 ];
 
 export function WaitlistDialog() {
